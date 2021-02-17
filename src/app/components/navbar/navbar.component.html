@@ -1,0 +1,117 @@
+<nav class="bg-gray-900" #navbar>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <img (click)="scrollTo('landingblock', '/')" class="cursor-pointer h-10 w-10"
+            src="../../../assets/icons/HU.png" alt="Workflow" />
+        </div>
+        <!-- <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+
+            <a
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+
+            <a
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+
+            <a
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+
+            <a
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+          </div>
+        </div> -->
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-4 flex items-center md:ml-6">
+          <div class="flex items-baseline">
+            <a (click)="scrollTo('landingblock', '/')"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/', 'text-blue-500': currentRoute === '/' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 text-sm font-medium">Home</a>
+            <a (click)="scrollTo('coursecards', '/programs')"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/programs', 'text-blue-500': currentRoute === '/programs' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 text-sm font-medium">Programs</a>
+            <a (click)="scrollTo('schoolheader', '/schools')"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/schools', 'text-blue-500': currentRoute === '/schools' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 text-sm font-medium">Schools</a>
+            <a (click)="scrollTo('aboutus', '/aboutus')"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/aboutus', 'text-blue-500': currentRoute === '/aboutus' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 text-sm font-medium">About
+              Us</a>
+            <a (click)="scrollTo('contactus', '/contactus')"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/contactus', 'text-blue-500': currentRoute === '/contactus' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact
+              Us</a>
+            <a (click)="routeToForm()"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/form', 'text-blue-500': currentRoute === '/form' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 font-bold text-sm font-medium">Enroll
+              Now!</a>
+            <!-- <a href="https://gw.dragonpay.ph/GenPay.aspx?merchantid=PCUCCLCGI"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 font-bold text-sm font-medium">Pay
+              Now!</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="-mr-2 flex md:hidden">
+        <button (click)="isOpenMobileMenu = !isOpenMobileMenu"
+          class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
+              Heroicon name: x
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--
+      Mobile menu, toggle classes based on menu state.
+
+      Open: "block", closed: "hidden"
+    -->
+  <div class="md:hidden" [ngClass]="{ block: isOpenMobileMenu == true, hidden: isOpenMobileMenu == false }">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a (click)="scrollTo('landingblock', '/')"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/', 'text-white': currentRoute === '/' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+
+      <a (click)="scrollTo('coursecards', '/programs')"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/programs', 'text-white': currentRoute === '/programs' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Programs</a>
+
+      <a (click)="scrollTo('schoolheader', '/schools')"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/schools', 'text-white': currentRoute === '/schools' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Schools</a>
+      <a (click)="scrollTo('aboutus', '/aboutus')"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/aboutus', 'text-white': currentRoute === '/aboutus' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About
+        Us</a>
+
+      <a (click)="scrollTo('contactus', '/contactus')"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/contactus', 'text-white': currentRoute === '/contactus' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact
+        Us</a>
+
+      <a (click)="routeToForm()"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/form', 'text-white': currentRoute === '/form' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Enroll
+        Now!</a>
+      <!-- 
+      <a href="https://gw.dragonpay.ph/GenPay.aspx?merchantid=PCUCCLCGI" class=" cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base
+        font-medium">Pay Now!</a> -->
+    </div>
+  </div>
+</nav>

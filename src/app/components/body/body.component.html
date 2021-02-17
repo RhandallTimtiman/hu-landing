@@ -1,0 +1,494 @@
+<div #landing>
+  <section id="landingblock" class="jumbotron">
+    <div #welcome class="relative h-screen pt-16 pb-32 flex content-center items-center justify-center"
+      style="min-height: 75vh;">
+      <div class="absolute top-0 w-full h-full bg-center bg-cover"
+        style="background-image: url(../assets/backgrounds/clouds.gif);">
+        <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-white"></span>
+      </div>
+      <div class="container relative mx-auto">
+        <div class="items-center flex flex-col flex-wrap">
+          <div class="w-full px-4 ml-auto mr-auto text-center">
+            <div class="w-full">
+              <h1 class="header font-bold text-7xl text-white uppercase md:text-7xl lg:text-8xl">
+                <span class="red-color">
+                  Home
+                </span>
+                <span class="blue-color">
+                  University
+                </span>
+              </h1>
+              <p class="sub-header mt-4 text-lg lg:text-2xl font-extrabold text-gray-900 flex-nowrap">
+                The Education Portal of Center for Leadership, Communication & Governance
+              </p>
+            </div>
+            <button (click)="redirectToRouter('form')"
+              class="mt-4 w-100 py-2 px-5 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <span class="header upprcase font-bold text-white text-3xl">
+                Enroll now!
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="abouthu">
+    <div #abouthu class="w-full gradient-bg-headers flex flex-col justify-center mx-auto px-5 py-20">
+      <p class="text-3xl md:text-5xl lg:text-5xl tracking-wide italic text-white text-center px-6 quote">
+        "<span class="font-bold">Home University</span> provides
+        online educational experiences that can help you achieve your personal and professional goals. Our flexible and
+        online executive education programs are designed to bring the classroom experience, wherever you are."</p>
+    </div>
+  </section>
+  <section id="coursecards" class="course-cards">
+    <div #course id="course" class="container my-12 mx-auto px-4 md:px-12">
+      <div class="programs-offered flex justify-center">
+        <p class="text-gray-900 text-center mb-4 header font-extrabold text-6xl">
+          Degree Programs Offered
+        </p>
+      </div>
+      <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
+          <div class="w-full h-full px-4 mr-auto ml-auto">
+            <div
+              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg baccalaureate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              <img alt="..." src="../assets/backgrounds/baccalaureate.jpeg"
+                class="crop-picture w-full align-middle rounded-t-lg" />
+              <blockquote class="relative p-8 mb-4">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                  <polygon points="-30,95 583,95 583,65" class="baccalaureate-text fill-current">
+                  </polygon>
+                </svg>
+                <h4 class="header text-3xl font-bold text-white">
+                  Baccalaureate Degree
+                </h4>
+                <p class="sub-header text-md font-light mt-2 text-white">
+                  Advance your career and acquire a bachelor’s degree through accelerated program with
+                  equivalency & accreditation features.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
+          <div class="w-full h-full px-4 mr-auto ml-auto">
+            <div
+              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg masters cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              <img alt="..." src="../assets/backgrounds/masters.jpg"
+                class="crop-picture w-full align-middle rounded-t-lg" />
+              <blockquote class="relative p-8 mb-4">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                  <polygon points="-30,95 583,95 583,65" class="masters-text fill-current"></polygon>
+                </svg>
+                <h4 class="header text-3xl font-bold text-white">
+                  Master's Degree
+                </h4>
+                <p class="sub-header text-md font-light mt-2 text-white">
+                  Propel your competencies through customized Master’s Degree Programs designed for
+                  the learners and industry needs.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
+          <div class="w-full h-full px-4 mr-auto ml-auto">
+            <div
+              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg doctorate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              <img alt="..." src="../assets/backgrounds/doctoral.jpg"
+                class="crop-picture w-full align-middle rounded-t-lg" />
+              <blockquote class="relative p-8 mb-4">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
+                  <polygon points="-30,95 583,95 583,65" class="doctorate-text fill-current">
+                  </polygon>
+                </svg>
+                <h4 class="header text-3xl font-bold text-white">
+                  Doctoral Degree
+                </h4>
+                <p class="sub-header text-md font-light mt-2 text-white">
+                  Expand your analytical skills through Doctoral Degree Programs developed
+                  specifically for supervisorial and managerial positions; and for aspiring executives
+                  in public & private sectors.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="block" aria-hidden="true">
+    <div class="py-10">
+      <div class="border-t border-gray-200"></div>
+    </div>
+  </div>
+  <section id="courseoffered" class="courseoffered">
+    <div #courseoffered class="container mb-12 mx-auto px-4 md:px-10">
+      <div class="programs-offered flex justify-center">
+        <p class="text-gray-900 text-center header font-extrabold text-6xl mb-4">
+          Courses Offered
+        </p>
+      </div>
+      <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
+          <div class="w-full h-full px-4 mr-auto ml-auto">
+            <div
+              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg baccalaureate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              <blockquote class="relative p-8 mb-4">
+                <h4 class="header text-center text-3xl font-bold text-white">
+                  Baccalaureate / College
+                </h4>
+                <div class="p-4 bacc-courses text-white sub-header text-md font-light">
+                  <ol>
+                    <li class="mb-2">A.) Bachelor Of Arts in Political Science</li>
+                    <li class="mb-2">B.) Bachelor Of Science in Office Administration</li>
+                    <li class="mb-2">
+                      C.) Bachelor Of Science in Business Administration
+                      <dl>
+                        <dt class="mb-2">- Financial Management</dt>
+                        <dt class="mb-2">- Human Resource Development and Management</dt>
+                        <dt class="mb-2">- Marketing Management</dt>
+                      </dl>
+                    </li>
+                    <li>D.) Bachelor Of Science in Entrepreneurial Management</li>
+                  </ol>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
+          <div class="w-full h-full px-4 mr-auto ml-auto">
+            <div
+              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg masters cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              <blockquote class="relative p-8 mb-4">
+                <h4 class="header text-center text-3xl font-bold text-white">
+                  Masters
+                </h4>
+                <div class="p-4 bacc-courses text-white sub-header text-md font-light">
+                  <ol>
+                    <li class="mb-2">A.) Master in Development Management and Governance</li>
+                    <li class="mb-2">B.) Master in Management - Public Administration</li>
+                    <li class="mb-2">C.) Master in Management - Educational Management</li>
+                    <li class="mb-2">D.) Master in Management - Health Administration</li>
+                    <li class="mb-2">E.) Master in Management - Hospital Administration</li>
+                    <li class="mb-2">F.) Master in Management - Police Administration</li>
+                    <li class="mb-2">G.) Master in Management - Information Technology</li>
+                    <li class="mb-2">H.) Master in Public Administration</li>
+                    <li class="mb-2">I.) Master in Business Administration</li>
+                    <li>J.) Master of Arts in Education</li>
+                  </ol>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
+          <div class="w-full h-full px-4 mr-auto ml-auto">
+            <div
+              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg doctorate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              <blockquote class="relative p-8 mb-4">
+                <h4 class="header text-center text-3xl font-bold text-white">
+                  Doctorate
+                </h4>
+                <div class="p-4 bacc-courses text-white sub-header text-md font-light">
+                  <ol>
+                    <li class="mb-2">A.) Doctor of Public Administration</li>
+                    <li class="mb-2">B.) Doctor of Business Administration</li>
+                    <li class="mb-2">C.) PhD in Development Administration</li>
+                    <li class="mb-2">
+                      D.) Executive Doctorate in Leadership
+                      <dl>
+                        <dt class="mb-2">- Public Management</dt>
+                      </dl>
+                    </li>
+                    <li>E.) Doctor of Education</li>
+                  </ol>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="schoolheader" class="jumbotron-schools">
+    <div class="flex flex-col justify-center h-40 gradient-bg-headers py-4 px-4 text-center">
+      <p class="header font-extrabold text-5xl lg:text-7xl text-white">
+        Earn your degree at the comfort of your home
+      </p>
+    </div>
+  </section>
+  <section id="schools" class="universities mb-2 md:mb-0 lg:mb-0">
+    <div #schools class="flex flex-col justify-between py-12 px-12 h-3/6">
+      <div class="text-center lg:text-left">
+        <p class="header text-gray-900 text-6xl mb-4">
+          Partner Universities
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center my-8">
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+          <div class="px-6">
+            <img alt="..." src="../../../assets/icons/PCU.png"
+              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <div class="pt-6 text-center">
+              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                Philippine Christian University
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+          <div class="px-6">
+            <img alt="..." src="../../../assets/icons/UMAK.png"
+              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <div class="pt-6 text-center">
+              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                University of Makati
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+          <div class="px-6">
+            <img alt="..." src="../../../assets/icons/LPU.png"
+              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <div class="pt-6 text-center">
+              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                Lyceum of the Philippines University
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+          <div class="px-6">
+            <img alt="..." src="../../../assets/icons/ISU.png"
+              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <div class="pt-6 text-center">
+              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                Isabela State University
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center">
+        <p class="header text-center lg:text-right text-gray-900 text-5xl">
+          More Universities Are Joining Soon!
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- <div class="block" aria-hidden="true">
+        <div class="py-10">
+            <div class="border-t border-gray-200"></div>
+        </div>
+    </div> -->
+  <!-- <section id="fellows" class="speakers mb-0 mb-24 md:mb-0 lg:mb-0">
+        <div #speakers>
+            <div class="flex flex-col justify-center h-30 py-4 px-4 text-center">
+                <p class="header text-5xl lg:text-6xl text-gray-900">
+                    Fellows / Guest Lecturers
+                </p>
+            </div>
+            <div class="flex flex-col py-12 px-12">
+                <div class="flex flex-wrap justify-center my-8">
+                    <div class="w-full pt-4 md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+                        <div class="px-6">
+                            <img alt="..." src="../../../assets/images/guy-1.jpg"
+                                class="max-w-full mx-auto rounded-full shadow-lg" style="max-width: 120px;" />
+                            <div class="pt-6 text-center">
+                                <p class="mt-1 sub-header text-2xl text-gray-600 uppercase font-bold">
+                                    <q>
+                                        <i> Lorem Ipsum Dolor </i>
+                                    </q>
+                                </p>
+                                <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                                    - Guy 1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-4 md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+                        <div class="px-6">
+                            <img alt="..." src="../../../assets/images/guy-1.jpg"
+                                class="max-w-full mx-auto rounded-full shadow-lg" style="max-width: 120px;" />
+                            <div class="pt-6 text-center">
+                                <p class="mt-1 sub-header text-2xl text-gray-600 uppercase font-bold">
+                                    <q>
+                                        <i> Lorem Ipsum Dolor </i>
+                                    </q>
+                                </p>
+                                <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                                    - Guy 2
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-4 md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+                        <div class="px-6">
+                            <img alt="..." src="../../../assets/images/guy-1.jpg"
+                                class="max-w-full mx-auto rounded-full shadow-lg" style="max-width: 120px;" />
+                            <div class="pt-6 text-center">
+                                <p class="mt-1 sub-header text-2xl text-gray-600 uppercase font-bold">
+                                    <q>
+                                        <i> Lorem Ipsum Dolor </i>
+                                    </q>
+                                </p>
+                                <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                                    - Guy 3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-4 md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+                        <div class="px-6">
+                            <img alt="..." src="../../../assets/images/guy-1.jpg"
+                                class="max-w-full mx-auto rounded-full shadow-lg" style="max-width: 120px;" />
+                            <div class="pt-6 text-center">
+                                <p class="mt-1 sub-header text-2xl text-gray-600 uppercase font-bold">
+                                    <q>
+                                        <i> Lorem Ipsum Dolor </i>
+                                    </q>
+                                </p>
+                                <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                                    - Guy 4
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-4 md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+                        <div class="px-6">
+                            <img alt="..." src="../../../assets/images/guy-1.jpg"
+                                class="max-w-full mx-auto rounded-full shadow-lg" style="max-width: 120px;" />
+                            <div class="pt-6 text-center">
+                                <p class="mt-1 sub-header text-2xl text-gray-600 uppercase font-bold">
+                                    <q>
+                                        <i> Lorem Ipsum Dolor </i>
+                                    </q>
+                                </p>
+                                <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                                    - Guy 5
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-4 md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
+                        <div class="px-6">
+                            <img alt="..." src="../../../assets/images/guy-1.jpg"
+                                class="max-w-full mx-auto rounded-full shadow-lg" style="max-width: 120px;" />
+                            <div class="pt-6 text-center">
+                                <p class="mt-1 sub-header text-2xl text-gray-600 uppercase font-bold">
+                                    <q>
+                                        <i> Lorem Ipsum Dolor </i>
+                                    </q>
+                                </p>
+                                <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+                                    - Guy 6
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+  <div class="block" aria-hidden="true">
+    <div class="py-10">
+      <div class="border-t border-gray-200"></div>
+    </div>
+  </div>
+  <section id="aboutus" class="jumbotron-speakers">
+    <div #aboutus class="h-100 pb-10">
+      <div class="text-center h-30 pb-8 px-4">
+        <p class="header text-5xl lg:text-6xl text-gray-900 mb-4">
+          About Us
+        </p>
+      </div>
+
+      <div class="about-us-body px-20 pb-20">
+        <p class="sub-header text-gray-900 text-2xl">
+          &nbsp;&nbsp;&nbsp;&nbsp; The <span class="font-extrabold">CLCGI</span> is a service organization
+          that
+          provides continuing learning
+          through capacity-enhancement programs in the areas of leadership communication in relation to
+          governance. <span class="font-extrabold">CLCGI</span> also goes into consulting services in <span
+            class="font-extrabold">Leadership</span>,
+          <span class="font-extrabold">Communication</span> and <span class="font-extrabold">Governance
+            Research and
+            Publications.</span>
+        </p>
+      </div>
+
+      <div class="flex flex row justify-center pb-10">
+        <img class="h-20 w-20" src="../../../assets/icons/HU.png" alt="Workflow" />
+        <div class="flex flex-col justify-center px-4">
+          <p class="sub-header text-gray-900 font-extrabold">
+            Powered by:
+          </p>
+        </div>
+        <img class="h-20 w-20" src="../../../assets/icons/CLCGI.jpg" alt="Workflow" />
+      </div>
+    </div>
+  </section>
+  <div class="block" aria-hidden="true">
+    <div class="py-10">
+      <div class="border-t border-gray-200"></div>
+    </div>
+  </div>
+  <section id="contactus" class="jumbotron-speakers">
+    <div #contactus class="h-100">
+      <div class="text-center h-30 pb-4 px-4">
+        <p class="header text-5xl lg:text-6xl text-gray-900 mb-4">
+          Contact Us
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center pb-10 mx-20">
+        <div class="hu-section mb-4 text-center flex flex-wrap justify-center w-full">
+          <!-- <p class="header text-2xl">
+            Local: <span class="font-bold">02-121212121</span>
+          </p>
+          <p class="header text-2xl">
+            International: <span class="font-bold">02-121212121</span>
+          </p> -->
+          <div class="mr-2">
+            <p class="sub-header text-2xl">
+              Email:
+            </p>
+          </div>
+          <div>
+            <p class="sub-header text-2xl text-left">
+              <span class="font-bold">homeuniversity2021@gmail.com</span>
+              <br>
+              <span class="font-bold">homeuniversity2021@yahoo.com</span>
+            </p>
+          </div>
+        </div>
+        <!-- <div class="clcgi-section mb-4 text-center md:text-right lg:text-right w-full md:w-1/3 lg:w-1/3">
+          <p class="text-4xl header font-bold text-gray-900 tracking-widest uppercase mb-4">
+            CLCGI
+          </p>
+          <p class="header text-2xl">
+            Local: <span class="font-bold">02-121212121</span>
+          </p>
+          <p class="header text-2xl">
+            International: <span class="font-bold">02-121212121</span>
+          </p>
+          <p class="header text-2xl">
+            Email: <span class="font-bold">02-121212121</span>
+          </p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+</div>

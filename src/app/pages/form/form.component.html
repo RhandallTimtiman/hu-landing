@@ -1,0 +1,371 @@
+<div #mainform id="mainform" class="h-full px-5 md:px-10 lg:px-20 pt-6 pb-10 bg-gray-100">
+  <ngx-spinner></ngx-spinner>
+  <form [formGroup]="studentEnrollmentForm">
+    <div class="flex flex-row pb-10 justify-center">
+      <p class="header text-7xl">
+        Pre-Enrollment Form
+      </p>
+    </div>
+    <div class="mt-10 sm:mt-0">
+      <div class="md:grid md:grid-cols-3 md:gap-6">
+        <div class="md:col-span-1">
+          <div class="px-4 sm:px-0">
+            <h3 class="text-3xl header uppercase font-medium leading-6 text-gray-900">Personal Information</h3>
+            <p class="mt-2 sub-header text-md text-gray-600">
+              Use a permanent address where you can receive mail.
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 md:mt-0 md:col-span-2">
+          <div class="shadow-lg overflow-hidden sm:rounded-md">
+            <div class="px-4 py-5 bg-white sm:p-6">
+              <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                  <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
+                  <input formControlName="first_name" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                  <label for="middle_name" class="block text-sm font-medium text-gray-700">Middle name</label>
+                  <input formControlName="middle_name" type="text" name="middle_name" id="middle_name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                  <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
+                  <input formControlName="last_name" type="text" name="last_name" id="last_name"
+                    autocomplete="family-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+                  <label for="birth_date" class="block text-sm font-medium text-gray-700">Birthday</label>
+                  <input formControlName="birth_date" type="date" name="birthday" id="birthday"
+                    autocomplete="family-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+                  <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                  <input formControlName="age" type="number" name="last_name" id="last_name" autocomplete="family-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6">
+                  <label for="primary_address" class="block text-sm font-medium text-gray-700">Email
+                    Address</label>
+                  <input formControlName="primary_email" type="text" name="email_address" id="email_address"
+                    autocomplete="email"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                  <label for="current_employment" class="block text-sm font-medium text-gray-700">Current
+                    Employer</label>
+                  <input formControlName="current_employment" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                  <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
+                  <input formControlName="position" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                  <label for="department" class="block text-sm font-medium text-gray-700">Department / Division</label>
+                  <input formControlName="department" type="text" name="last_name" id="last_name"
+                    autocomplete="family-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+                  <label for="total_years" class="block text-sm font-medium text-gray-700">Total Years in Service
+                    (Government or Private)</label>
+                  <input formControlName="years_in_government" type="number" name="last_name" id="last_name"
+                    autocomplete="family-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+                  <label for="mobile_number" class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                  <input formControlName="contact_number" type="text" name="last_name" id="last_name"
+                    autocomplete="family-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                  <label for="region" class="block text-sm font-medium text-gray-700">Region</label>
+                  <select formControlName="regCode" id="region" name="region" autocomplete="region"
+                    (change)="onChangeRegion($event.target.value)"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option *ngFor="let region of regions" [value]="region?.regCode">{{ region?.regDesc }}</option>
+                  </select>
+                </div>
+
+                <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                  <label for="province" class="block text-sm font-medium text-gray-700">Province</label>
+                  <select formControlName="provCode" id="province" name="province" autocomplete="province"
+                    (change)="onChangeProvince($event.target.value)"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option *ngFor="let province of provinces" [value]="province?.provCode">{{ province?.provDesc }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                  <label for="city" class="block text-sm font-medium text-gray-700">City / Municipality</label>
+                  <select formControlName="psgcCode" id="city" name="city" autocomplete="city"
+                    (change)="onChangeCity($event.target.value)"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option *ngFor="let city of cities" [value]="city?.psgcCode">{{ city?.citymunDesc }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="col-span-6">
+                  <label for="street_address" class="block text-sm font-medium text-gray-700">Street address</label>
+                  <input formControlName="address" type="text" name="street_address" id="street_address"
+                    autocomplete="street-address"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1 mt-4">
+                  Attach your Identification Photo
+                </label>
+                <ngx-dropzone class="justify-center" (change)="onSelect($event)" accept="image/jpeg,image/jpg,image/png"
+                  [multiple]="false" [maxFileSize]="fileSize">
+                  <ngx-dropzone-label>Attach your Identification Photo [File Size Must Not Exceed 4mb.]
+                  </ngx-dropzone-label>
+                  <ngx-dropzone-image-preview *ngFor="let f of profile_picture; let i = index" [file]="f"
+                    [removable]="true" (removed)="onRemove(f)">
+                    <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }}) {{ i }}</ngx-dropzone-label> -->
+                  </ngx-dropzone-image-preview>
+                </ngx-dropzone>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden sm:block" aria-hidden="true">
+      <div class="py-10">
+        <div class="border-t border-gray-200"></div>
+      </div>
+    </div>
+
+    <div class="pt-5 md:pt-0 lg:pt-0">
+      <div class="md:grid md:grid-cols-3 md:gap-6">
+        <div class="md:col-span-1">
+          <div class="px-4 sm:px-0">
+            <h3 class="text-3xl header uppercase font-medium leading-6 text-gray-900">Other Information
+            </h3>
+            <p class="mt-2 sub-header text-md text-gray-600">
+              Fill out your desired Degree Program and Course
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 md:mt-0 md:col-span-2">
+          <div class="shadow-lg sm:rounded-md sm:overflow-hidden">
+            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+              <div class="grid grid-cols-4 gap-6">
+                <div class="col-span-2 sm:col-span-2">
+                  <label for="program" class="block text-sm font-medium text-gray-700">Degree Program</label>
+                  <select formControlName="program_id" id="program" name="program" autocomplete="program"
+                    (change)="onChangeProgram($event.target.value)"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option *ngFor="let program of programs" [value]="program?.id">{{ program?.name }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-span-2 sm:col-span-2">
+                  <label for="country" class="block text-sm font-medium text-gray-700">Course</label>
+                  <select formControlName="course_id" id="course" name="course" autocomplete="course"
+                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option *ngFor="let course of courses" [value]="course?.id">{{ course?.name }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-2">
+                  <label for="registration_code" class="block text-sm font-medium text-gray-700">Registration
+                    Code</label>
+                  <input formControlName="registration_code" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                  Files
+                </label>
+                <ngx-dropzone (change)="onSelectCredentials($event)" [maxFileSize]="fileSize">
+                  <ngx-dropzone-label>Attach your Credentials (e.g. TOR, Form 137) from your previous school [File Size
+                    Must Not Exceed 4mb.]
+                  </ngx-dropzone-label>
+                  <div *ngFor="let f of attachments; let i = index">
+                    <div *ngIf="f.type === 'image/png' || f.type === 'image/jpg'">
+                      <ngx-dropzone-image-preview [file]="f" [removable]="true" (removed)="onRemoveCredentials(f)">
+                        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                      </ngx-dropzone-image-preview>
+                    </div>
+                    <div *ngIf="!(f.type === 'image/png' || f.type === 'image/jpg')">
+                      <ngx-dropzone-preview [file]="f" [removable]="true" (removed)="onRemoveCredentials(f)">
+                        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                      </ngx-dropzone-preview>
+                    </div>
+                  </div>
+                  <!-- <ngx-dropzone-preview *ngFor="let f of attachments; let i = index" [file]="f" [removable]="true"
+                    (removed)="onRemoveCredentials(f)">
+                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }}) {{ i }}</ngx-dropzone-label>
+                  </ngx-dropzone-preview> -->
+                </ngx-dropzone>
+              </div>
+
+              <!-- <div>
+                  <label class="block text-sm font-medium text-gray-700">
+                    Files
+                  </label>
+                  <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    <div class="space-y-1 text-center">
+                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
+                        aria-hidden="true">
+                        <path
+                          d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <div class="flex text-sm text-gray-600">
+                        <label for="file-upload"
+                          class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                          <span>Upload a file</span>
+                          <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                        </label>
+                        <p class="pl-1">or drag and drop</p>
+                      </div>
+                      <p class="text-xs text-gray-500">
+                        PNG, JPG, GIF up to 10MB
+                      </p>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden sm:block" aria-hidden="true">
+      <div class="py-10">
+        <div class="border-t border-gray-200"></div>
+      </div>
+    </div>
+
+    <div class="pt-5 md:pt-0 lg:pt-0">
+      <div class="md:grid md:grid-cols-3 md:gap-6">
+        <div class="md:col-span-1">
+          <div class="px-4 sm:px-0">
+            <h3 class="text-3xl header uppercase font-medium leading-6 text-gray-900">Academic / Professional Background
+            </h3>
+            <p class="mt-2 sub-header text-md text-gray-600">
+              Fill out your Educational Background
+            </p>
+          </div>
+        </div>
+        <div class="mt-5 md:mt-0 md:col-span-2">
+          <div class="shadow-lg sm:rounded-md sm:overflow-hidden">
+            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+              <div class="grid grid-cols-4 gap-6">
+                <div class="col-span-4">
+                  <p class="text-3xl header text-center md:text-left lg:text-left">
+                    Educational Attainment
+                  </p>
+                </div>
+
+                <div class="col-span-4">
+                  <p class="text-2xl header text-center md:text-left lg:text-left">
+                    Highschool
+                  </p>
+                </div>
+
+                <div class="col-span-4 sm:col-span-4 lg:col-span-4">
+                  <label for="hs_name" class="block text-sm font-medium text-gray-700">Name of School</label>
+                  <input formControlName="hs_name" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-4">
+                  <p class="text-2xl header text-center md:text-left lg:text-left">
+                    College
+                  </p>
+                </div>
+
+                <div class="col-span-4 sm:col-span-4 lg:col-span-4">
+                  <label for="college_name" class="block text-sm font-medium text-gray-700">Name of School</label>
+                  <input formControlName="college_name" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+
+                <div class="col-span-4">
+                  <p class="text-2xl header text-center md:text-left lg:text-left">
+                    Master's
+                  </p>
+                </div>
+
+                <div class="col-span-4 sm:col-span-4 lg:col-span-4">
+                  <label for="masters_name" class="block text-sm font-medium text-gray-700">Name of Graduate
+                    School</label>
+                  <input formControlName="masters_name" type="text" name="first_name" id="first_name"
+                    autocomplete="given-name"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+
+              <!-- <div>
+                  <label class="block text-sm font-medium text-gray-700">
+                    Files
+                  </label>
+                  <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    <div class="space-y-1 text-center">
+                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
+                        aria-hidden="true">
+                        <path
+                          d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <div class="flex text-sm text-gray-600">
+                        <label for="file-upload"
+                          class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                          <span>Upload a file</span>
+                          <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                        </label>
+                        <p class="pl-1">or drag and drop</p>
+                      </div>
+                      <p class="text-xs text-gray-500">
+                        PNG, JPG, GIF up to 10MB
+                      </p>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+              <button type="submit" (click)="submit()"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
