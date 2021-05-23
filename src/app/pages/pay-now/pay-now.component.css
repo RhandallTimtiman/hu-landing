@@ -1,0 +1,68 @@
+.header {
+  font-family: "bebas", sans-serif;
+}
+
+.sub-header {
+  font-family: "roboto", sans-serif;
+}
+
+.quote {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.baccalaureate {
+  background-color: #2563eb;
+}
+
+.baccalaureate-text {
+  color: #2563eb;
+}
+
+.masters {
+  background-color: #6466ae;
+}
+
+.masters-text {
+  color: #6466ae;
+}
+
+.doctorate {
+  background-color: #f87171;
+}
+
+.doctorate-text {
+  color: #f87171;
+}
+
+.crop-picture {
+  height: 200px;
+  object-fit: cover;
+  object-position: 100% 0;
+}
+
+.red-color {
+  color: #ef4444;
+}
+
+.blue-color {
+  color: #3b82f6;
+}
+
+.gradient-bg-headers {
+  background: rgb(59, 130, 246);
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 1) 25%,
+    rgba(239, 68, 68, 1) 85%
+  );
+}
+
+.fixed-h-w {
+  height: 120px;
+  width: 120px;
+}
+
+.fixed-height {
+  height: 500px;
+}
+

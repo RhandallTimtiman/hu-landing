@@ -20,7 +20,8 @@ export class FooterComponent implements OnInit {
   }
 
   scrollTo(id, route) {
-    if (this.currentRoute != '/form') {
+    console.log(this.currentRoute)
+    if (this.currentRoute != '/form' && this.currentRoute != '/pay') {
       let scroll = document.getElementById(id);
 
       scroll.scrollIntoView({behavior: 'smooth', block: 'start'});

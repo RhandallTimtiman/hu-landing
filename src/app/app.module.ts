@@ -18,6 +18,7 @@ import { HttpInterceptorService } from './interceptor/http-interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { PayNowComponent } from './pages/pay-now/pay-now.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     DoctoralComponent,
     BodyComponent,
     FormComponent,
+    PayNowComponent,
   ],
   imports: [
     BrowserModule,

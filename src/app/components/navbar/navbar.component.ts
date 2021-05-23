@@ -40,6 +40,7 @@ export class NavbarComponent implements OnInit {
     this.initialAnimations();
     this.router.events.subscribe(value => {
       this.currentRoute = this.router.url.toString();
+      console.log(this.currentRoute)
     });
 
     setTimeout(() => {
@@ -66,7 +67,8 @@ export class NavbarComponent implements OnInit {
   }
 
   scrollTo(id, route) {
-    if (this.currentRoute != '/form') {
+    console.log(this.currentRoute)
+    if (this.currentRoute != '/form' && this.currentRoute != '/pay') {
       let scroll = document.getElementById(id);
 
       scroll.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -92,6 +94,14 @@ export class NavbarComponent implements OnInit {
   routeToForm() {
     this.router.navigate([
       'form'
+    ])
+
+    window.scrollTo(0, 0);
+  }
+
+  routeToPayNow() {
+    this.router.navigate([
+      'pay'
     ])
 
     window.scrollTo(0, 0);

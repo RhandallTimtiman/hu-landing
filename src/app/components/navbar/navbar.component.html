@@ -48,6 +48,10 @@
               [ngClass]="{ 'border-opacity-100': currentRoute === '/form', 'text-blue-500': currentRoute === '/form' }"
               class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 font-bold text-sm font-medium">Enroll
               Now!</a>
+            <a (click)="routeToPayNow()"
+              [ngClass]="{ 'border-opacity-100': currentRoute === '/pay', 'text-blue-500': currentRoute === '/pay' }"
+              class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 font-bold text-sm font-medium">Pay
+              Now!</a>
             <!-- <a href="https://gw.dragonpay.ph/GenPay.aspx?merchantid=PCUCCLCGI"
               class="cursor-pointer border-b-4 border-blue-500 border-opacity-0 text-gray-400 leading-7 hover:border-blue-500 hover:text-blue-500 px-3 py-2 font-bold text-sm font-medium">Pay
               Now!</a> -->
@@ -109,9 +113,11 @@
         [ngClass]="{ 'bg-gray-900': currentRoute === '/form', 'text-white': currentRoute === '/form' }"
         class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Enroll
         Now!</a>
-      <!-- 
-      <a href="https://gw.dragonpay.ph/GenPay.aspx?merchantid=PCUCCLCGI" class=" cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base
-        font-medium">Pay Now!</a> -->
+
+      <a (click)="routeToPayNow()"
+        [ngClass]="{ 'bg-gray-900': currentRoute === '/pay', 'text-white': currentRoute === '/pay' }"
+        class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pay
+        Now!</a>
     </div>
   </div>
 </nav>
