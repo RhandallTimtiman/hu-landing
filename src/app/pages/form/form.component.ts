@@ -1,5 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { gsap } from 'gsap';
@@ -15,29 +22,29 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  @ViewChild('mainform', { static: true }) mainform: ElementRef<HTMLDivElement>
+  @ViewChild('mainform', { static: true }) mainform: ElementRef<HTMLDivElement>;
   attachments: File[] = [];
   profile_picture: File[] = [];
 
-  attachments_holder = []
-  profile_picture_holder = []
+  attachments_holder = [];
+  profile_picture_holder = [];
 
-  regions: any[] = []
-  provinces: any[] = []
-  cities: any[] = []
+  regions: any[] = [];
+  provinces: any[] = [];
+  cities: any[] = [];
 
-  programs: any[] = []
-  courses: any[] = []
+  programs: any[] = [];
+  courses: any[] = [];
 
-  attachments_final = []
-  profile_picture_final = []
+  attachments_final = [];
+  profile_picture_final = [];
 
-  studentEnrollmentForm: FormGroup
+  studentEnrollmentForm: FormGroup;
 
-  fileSize = 4194304
+  fileSize = 4194304;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -50,7 +57,6 @@ export class FormComponent implements OnInit {
     private cdr: ChangeDetectorRef
   ) {
     // this.spinner.show()
-
     // setTimeout(() => {
     //   this.spinner.hide()
     // }, 3000)
@@ -59,52 +65,48 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.initialAnimations();
 
-    this.studentEnrollmentForm = this._formBuilder.group(
-      {
-        first_name: ['', Validators.required],
-        middle_name: [''],
-        last_name: ['', Validators.required],
-        birth_date: ['', Validators.required],
-        age: ['', Validators.required],
-        primary_email: ['', [Validators.required, Validators.email]],
-        current_employment: ['', Validators.required],
-        position: ['', Validators.required],
-        department: ['', Validators.required],
-        years_in_government: ['', Validators.required],
-        contact_number: ['', Validators.required],
-        address: ['', Validators.required],
-        registration_code: ['', Validators.required],
-        regCode: ['', Validators.required],
-        provCode: ['', Validators.required],
-        psgcCode: ['', Validators.required],
-        zip: ['', Validators.required],
-        profile_picture: ['', Validators.required],
-        program_id: ['', Validators.required],
-        course_id: ['', Validators.required],
-        professional_license: [''],
-        secondary_email: [''],
-        hs_name: ['', Validators.required],
-        hs_year_graduated: ['', Validators.required],
-        hs_address: ['', Validators.required],
-        college_name: [''],
-        college_year_graduated: [''],
-        college_address: [''],
-        masters_name: [''],
-        masters_year_graduated: [''],
-        masters_address: [''],
-        attachments: ['', Validators.required],
-      }
-    );
+    this.studentEnrollmentForm = this._formBuilder.group({
+      first_name: ['', Validators.required],
+      middle_name: [''],
+      last_name: ['', Validators.required],
+      birth_date: ['', Validators.required],
+      age: ['', Validators.required],
+      primary_email: ['', [Validators.required, Validators.email]],
+      current_employment: ['', Validators.required],
+      position: ['', Validators.required],
+      department: ['', Validators.required],
+      years_in_government: ['', Validators.required],
+      contact_number: ['', Validators.required],
+      address: ['', Validators.required],
+      registration_code: ['', Validators.required],
+      regCode: ['', Validators.required],
+      provCode: ['', Validators.required],
+      psgcCode: ['', Validators.required],
+      zip: ['', Validators.required],
+      profile_picture: ['', Validators.required],
+      program_id: ['', Validators.required],
+      course_id: ['', Validators.required],
+      professional_license: [''],
+      secondary_email: [''],
+      hs_name: ['', Validators.required],
+      hs_year_graduated: ['', Validators.required],
+      hs_address: ['', Validators.required],
+      college_name: [''],
+      college_year_graduated: [''],
+      college_address: [''],
+      masters_name: [''],
+      masters_year_graduated: [''],
+      masters_address: [''],
+      attachments: ['', Validators.required],
+    });
 
-    this.landingService.getRegions()
-      .subscribe((result) => {
-        this.regions = result
-      })
-    
-    this.landingService.getPrograms()
-      .subscribe((result) => {
-        this.programs = result
-      })
+    this.landingService.getRegions().subscribe((result) => {
+      this.regions = result;
+    });
+
+    this.landingService.getPrograms().subscribe((result) => {
+      this.programs = result;
+    });
   }
 
   /**
@@ -119,7 +121,7 @@ export class FormComponent implements OnInit {
       y: -20,
       stagger: 0.2,
       delay: 0.5,
-    })
+    });
   }
 
   /**
@@ -133,14 +135,16 @@ export class FormComponent implements OnInit {
     this.profile_picture = [...event.addedFiles];
 
     this.profile_picture_holder = this.profile_picture.map((prof) => {
-      return prof && prof.name
+      return prof && prof.name;
     });
 
-    this.studentEnrollmentForm.get('profile_picture').setValue(this.profile_picture_holder)
+    this.studentEnrollmentForm
+      .get('profile_picture')
+      .setValue(this.profile_picture_holder);
 
-    this.readFile(this.profile_picture[0]).then(fileContents => {
+    this.readFile(this.profile_picture[0]).then((fileContents) => {
       // Put this string in a request body to upload it to an API.
-      this.profile_picture_final.push(fileContents)
+      this.profile_picture_final.push(fileContents);
     });
   }
 
@@ -155,7 +159,9 @@ export class FormComponent implements OnInit {
     this.profile_picture.splice(this.profile_picture.indexOf(event), 1);
     this.profile_picture_holder.splice(this.profile_picture.indexOf(event), 1);
     this.profile_picture_final.splice(this.profile_picture.indexOf(event), 1);
-    this.studentEnrollmentForm.get('profile_picture').setValue(this.profile_picture_holder)
+    this.studentEnrollmentForm
+      .get('profile_picture')
+      .setValue(this.profile_picture_holder);
   }
 
   /**
@@ -167,15 +173,17 @@ export class FormComponent implements OnInit {
   onSelectCredentials(event) {
     this.attachments.push(...event.addedFiles);
     this.attachments_holder = this.attachments.map((attachment) => {
-      return attachment && attachment.name
+      return attachment && attachment.name;
     });
     event.addedFiles.forEach((file) => {
-      this.readFile(file).then(fileContents => {
+      this.readFile(file).then((fileContents) => {
         // Put this string in a request body to upload it to an API.
-        this.attachments_final.push(fileContents)
+        this.attachments_final.push(fileContents);
       });
-    })
-    this.studentEnrollmentForm.get('attachments').setValue(this.attachments_holder)
+    });
+    this.studentEnrollmentForm
+      .get('attachments')
+      .setValue(this.attachments_holder);
   }
 
   /**
@@ -189,7 +197,9 @@ export class FormComponent implements OnInit {
     this.attachments.splice(this.attachments.indexOf(event), 1);
     this.attachments_holder.splice(this.attachments.indexOf(event), 1);
     this.attachments_final.splice(this.attachments.indexOf(event), 1);
-    this.studentEnrollmentForm.get('attachments').setValue(this.attachments_holder)
+    this.studentEnrollmentForm
+      .get('attachments')
+      .setValue(this.attachments_holder);
   }
 
   /**
@@ -199,13 +209,12 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   onChangeRegion(regionValue) {
-    this.provinces = []
-    this.cities = []
+    this.provinces = [];
+    this.cities = [];
 
-    this.landingService.getProvince(regionValue)
-      .subscribe((result) => {
-        this.provinces = result
-      })
+    this.landingService.getProvince(regionValue).subscribe((result) => {
+      this.provinces = result;
+    });
   }
 
   /**
@@ -217,10 +226,9 @@ export class FormComponent implements OnInit {
   onChangeProvince(provinceValue) {
     this.cities = [];
 
-    this.landingService.getCities(provinceValue)
-    .subscribe((result) => {
-      this.cities = result
-    })
+    this.landingService.getCities(provinceValue).subscribe((result) => {
+      this.cities = result;
+    });
   }
 
   /**
@@ -230,11 +238,13 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   onChangeProgram(programValue) {
-    this.courses = []
+    this.courses = [];
 
-    var program = this.programs.find((program) => program['id'].toString() == programValue.toString())
+    var program = this.programs.find(
+      (program) => program['id'].toString() == programValue.toString()
+    );
 
-    this.courses = program['courses']
+    this.courses = program['courses'];
   }
 
   /**
@@ -243,8 +253,7 @@ export class FormComponent implements OnInit {
    * @param {*} CityValue
    * @memberof FormComponent
    */
-  onChangeCity(cityValue) {
-  }
+  onChangeCity(cityValue) {}
 
   /**
    * Submit Data
@@ -252,53 +261,64 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   submit() {
-    this.spinner.show()
+    this.spinner.show();
     // console.log(this.studentEnrollmentForm.getRawValue())
     // this.toastr.success('Hello world!', 'Toastr fun!');
-    const formData = new FormData()
+    const formData = new FormData();
 
     const studentInfo = this.studentEnrollmentForm.getRawValue();
 
     // studentInfo['profile_picture'] = this.profile_picture_final[0]
     // studentInfo['attachments'] = this.attachments_final
-    delete studentInfo['profile_picture']
-    delete studentInfo['attachments']
-    delete studentInfo['secondary_email']
+    delete studentInfo['profile_picture'];
+    delete studentInfo['attachments'];
+    delete studentInfo['secondary_email'];
 
-    Object.keys(studentInfo).forEach(key => formData.append(key, studentInfo[key]));
+    Object.keys(studentInfo).forEach((key) =>
+      formData.append(key, studentInfo[key])
+    );
 
-    formData.append('profile_picture', (this.profile_picture[0]) ? this.profile_picture[0] : '')
+    formData.append(
+      'profile_picture',
+      this.profile_picture[0] ? this.profile_picture[0] : ''
+    );
 
     if (this.attachments.length !== 0) {
       for (var i = 0; i < this.attachments.length; i++) {
-        formData.append('attachments[]', this.attachments[i])
+        formData.append('attachments[]', this.attachments[i]);
       }
     } else {
       formData.append('attachments', '');
     }
 
-    this.landingService.submitStudentInformation(formData)
-      .subscribe((result) => {
-        this.spinner.hide()
-        this.studentEnrollmentForm.reset()
-        this.attachments = []
-        this.attachments_final = []
-        this.attachments_holder = []
-        this.profile_picture = []
-        this.profile_picture_final = []
-        this.attachments_holder = []
-        this.toastr.success('You have successfully submitted your application to Home University.<br> We will process your application and we will get back to you once we completed the validation', 'Success!', {
-          enableHtml: true
-        });
-      }, (error) => {
-        this.spinner.hide()
+    this.landingService.submitStudentInformation(formData).subscribe(
+      (result) => {
+        this.spinner.hide();
+        this.studentEnrollmentForm.reset();
+        this.attachments = [];
+        this.attachments_final = [];
+        this.attachments_holder = [];
+        this.profile_picture = [];
+        this.profile_picture_final = [];
+        this.attachments_holder = [];
+        this.toastr.success(
+          'You have successfully submitted your application to U-ED Portal.<br> We will process your application and we will get back to you once we completed the validation',
+          'Success!',
+          {
+            enableHtml: true,
+          }
+        );
+      },
+      (error) => {
+        this.spinner.hide();
 
         let message = this.utilities.parseError(error.errors);
 
         this.toastr.error(message, 'Please fill up the missing fields!', {
-          enableHtml: true
-        })
-      })
+          enableHtml: true,
+        });
+      }
+    );
   }
 
   /**
@@ -312,21 +332,21 @@ export class FormComponent implements OnInit {
   private async readFile(file: File): Promise<string | ArrayBuffer> {
     return new Promise<string | ArrayBuffer>((resolve, reject) => {
       const reader = new FileReader();
-  
-      reader.onload = e => {
+
+      reader.onload = (e) => {
         return resolve((e.target as FileReader).result);
       };
-  
-      reader.onerror = e => {
+
+      reader.onerror = (e) => {
         console.error(`FileReader failed on file ${file.name}.`);
         return reject(null);
       };
-  
+
       if (!file) {
         console.error('No file to read.');
         return reject(null);
       }
-  
+
       reader.readAsDataURL(file);
     });
   }

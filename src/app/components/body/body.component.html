@@ -1,16 +1,43 @@
 <div #landing>
   <section id="landingblock" class="jumbotron">
-    <div #welcome class="relative h-screen pt-16 pb-32 flex content-center items-center justify-center"
-      style="min-height: 75vh;">
-      <div class="absolute top-0 w-full h-full bg-center bg-cover"
-        style="background-image: url(../assets/backgrounds/clouds.gif);">
-        <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-white"></span>
+    <div
+      #welcome
+      class="
+        relative
+        h-screen
+        pt-16
+        pb-32
+        flex
+        content-center
+        items-center
+        justify-center
+      "
+      style="min-height: 75vh"
+    >
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style="background-image: url(../assets/backgrounds/clouds.gif)"
+      >
+        <span
+          id="blackOverlay"
+          class="w-full h-full absolute opacity-75 bg-white"
+        ></span>
       </div>
       <div class="container relative mx-auto">
         <div class="items-center flex flex-col flex-wrap">
           <div class="w-full px-4 ml-auto mr-auto text-center">
             <div class="w-full">
-              <h1 class="header text-gray-700 font-bold text-7xl text-white uppercase md:text-7xl lg:text-8xl">
+              <h1
+                class="
+                  header
+                  text-gray-700
+                  font-bold
+                  text-7xl text-white
+                  uppercase
+                  md:text-7xl
+                  lg:text-8xl
+                "
+              >
                 <!-- <span class="text-gray-900">
                   What is
                 </span>
@@ -29,8 +56,27 @@
                 Your Gateway to University Education.
               </p> -->
             </div>
-            <button (click)="redirectToRouter('form')"
-              class="mt-4 w-100 py-2 px-5 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button
+              (click)="redirectToRouter('form')"
+              class="
+                mt-4
+                w-100
+                py-2
+                px-5
+                border border-transparent
+                shadow-sm
+                text-sm
+                font-medium
+                rounded-md
+                text-white
+                bg-blue-500
+                hover:bg-blue-700
+                focus:outline-none
+                focus:ring-2
+                focus:ring-offset-2
+                focus:ring-indigo-500
+              "
+            >
               <span class="header upprcase font-bold text-white text-3xl">
                 Enroll now!
               </span>
@@ -43,7 +89,9 @@
   <section id="coursecards" class="course-cards">
     <div #course id="course" class="container my-12 mx-auto px-4 md:px-12">
       <div class="programs-offered flex justify-center">
-        <p class="text-gray-900 text-center mb-4 header font-extrabold text-6xl">
+        <p
+          class="text-gray-900 text-center mb-4 header font-extrabold text-6xl"
+        >
           Degree Programs Offered by Our Partner Universities
         </p>
       </div>
@@ -51,21 +99,50 @@
         <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
           <div class="w-full h-full px-4 mr-auto ml-auto">
             <div
-              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg baccalaureate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
-              <img alt="..." src="../assets/backgrounds/baccalaureate.jpeg"
-                class="crop-picture w-full align-middle rounded-t-lg" />
+              class="
+                relative
+                h-full
+                flex flex-col
+                min-w-0
+                break-words
+                bg-white
+                w-full
+                mb-6
+                shadow-lg
+                rounded-lg
+                baccalaureate
+                cursor-pointer
+                rounded
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            >
+              <img
+                alt="..."
+                src="../assets/backgrounds/baccalaureate.jpeg"
+                class="crop-picture w-full align-middle rounded-t-lg"
+              />
               <blockquote class="relative p-8 mb-4">
-                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
-                  class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
-                  <polygon points="-30,95 583,95 583,65" class="baccalaureate-text fill-current">
-                  </polygon>
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block"
+                  style="height: 95px; top: -94px"
+                >
+                  <polygon
+                    points="-30,95 583,95 583,65"
+                    class="baccalaureate-text fill-current"
+                  ></polygon>
                 </svg>
                 <h4 class="header text-3xl font-bold text-white">
                   Baccalaureate Degree
                 </h4>
                 <p class="sub-header text-md font-light mt-2 text-white">
-                  Advance your career and acquire a bachelor’s degree through accelerated program with
-                  equivalency & accreditation features.
+                  Advance your career and acquire a bachelor’s degree through
+                  accelerated program with equivalency & accreditation features.
                 </p>
               </blockquote>
             </div>
@@ -75,20 +152,50 @@
         <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
           <div class="w-full h-full px-4 mr-auto ml-auto">
             <div
-              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg masters cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
-              <img alt="..." src="../assets/backgrounds/masters.jpg"
-                class="crop-picture w-full align-middle rounded-t-lg" />
+              class="
+                relative
+                h-full
+                flex flex-col
+                min-w-0
+                break-words
+                bg-white
+                w-full
+                mb-6
+                shadow-lg
+                rounded-lg
+                masters
+                cursor-pointer
+                rounded
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            >
+              <img
+                alt="..."
+                src="../assets/backgrounds/masters.jpg"
+                class="crop-picture w-full align-middle rounded-t-lg"
+              />
               <blockquote class="relative p-8 mb-4">
-                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
-                  class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
-                  <polygon points="-30,95 583,95 583,65" class="masters-text fill-current"></polygon>
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block"
+                  style="height: 95px; top: -94px"
+                >
+                  <polygon
+                    points="-30,95 583,95 583,65"
+                    class="masters-text fill-current"
+                  ></polygon>
                 </svg>
                 <h4 class="header text-3xl font-bold text-white">
                   Master's Degree
                 </h4>
                 <p class="sub-header text-md font-light mt-2 text-white">
-                  Propel your competencies through customized Master’s Degree Programs designed for
-                  the learners and industry needs.
+                  Propel your competencies through customized Master’s Degree
+                  Programs designed for the learners and industry needs.
                 </p>
               </blockquote>
             </div>
@@ -98,22 +205,52 @@
         <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
           <div class="w-full h-full px-4 mr-auto ml-auto">
             <div
-              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg doctorate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
-              <img alt="..." src="../assets/backgrounds/doctoral.jpg"
-                class="crop-picture w-full align-middle rounded-t-lg" />
+              class="
+                relative
+                h-full
+                flex flex-col
+                min-w-0
+                break-words
+                bg-white
+                w-full
+                mb-6
+                shadow-lg
+                rounded-lg
+                doctorate
+                cursor-pointer
+                rounded
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            >
+              <img
+                alt="..."
+                src="../assets/backgrounds/doctoral.jpg"
+                class="crop-picture w-full align-middle rounded-t-lg"
+              />
               <blockquote class="relative p-8 mb-4">
-                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
-                  class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
-                  <polygon points="-30,95 583,95 583,65" class="doctorate-text fill-current">
-                  </polygon>
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block"
+                  style="height: 95px; top: -94px"
+                >
+                  <polygon
+                    points="-30,95 583,95 583,65"
+                    class="doctorate-text fill-current"
+                  ></polygon>
                 </svg>
                 <h4 class="header text-3xl font-bold text-white">
                   Doctoral Degree
                 </h4>
                 <p class="sub-header text-md font-light mt-2 text-white">
-                  Expand your analytical skills through Doctoral Degree Programs developed
-                  specifically for supervisorial and managerial positions; and for aspiring executives
-                  in public & private sectors.
+                  Expand your analytical skills through Doctoral Degree Programs
+                  developed specifically for supervisorial and managerial
+                  positions; and for aspiring executives in public & private
+                  sectors.
                 </p>
               </blockquote>
             </div>
@@ -130,7 +267,9 @@
   <section id="courseoffered" class="courseoffered">
     <div #courseoffered class="container mb-12 mx-auto px-4 md:px-10">
       <div class="programs-offered flex justify-center">
-        <p class="text-gray-900 text-center header font-extrabold text-6xl mb-4">
+        <p
+          class="text-gray-900 text-center header font-extrabold text-6xl mb-4"
+        >
           Courses Offered by Our Partner Universities
         </p>
       </div>
@@ -138,19 +277,64 @@
         <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
           <div class="w-full h-full px-4 mr-auto ml-auto">
             <div
-              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg baccalaureate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              class="
+                relative
+                h-full
+                flex flex-col
+                min-w-0
+                break-words
+                bg-white
+                w-full
+                mb-6
+                shadow-lg
+                rounded-lg
+                baccalaureate
+                cursor-pointer
+                rounded
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            >
               <blockquote class="relative p-8 mb-4">
                 <h4 class="header text-center text-3xl font-bold text-white">
                   Baccalaureate / College
                 </h4>
-                <div class="p-4 bacc-courses text-white sub-header text-md font-light">
+                <div
+                  class="
+                    p-4
+                    bacc-courses
+                    text-white
+                    sub-header
+                    text-md
+                    font-light
+                  "
+                >
                   <ol>
-                    <li class="mb-2">A.) Bachelor of Science in Business Administration (BSBA)</li>
+                    <li class="mb-2">
+                      A.) Bachelor of Science in Office Administration (BSOA)
+                    </li>
+                    <li class="mb-2">
+                      B.) Bachelor Of Science in Business Administration
+                      <dl>
+                        <dt class="mb-2">- Major in Financial Management</dt>
+                        <dt class="mb-2">
+                          - Major in Human Resource Development and Management
+                        </dt>
+                        <dt class="mb-2">- Major in Marketing Management</dt>
+                      </dl>
+                    </li>
+                    <li>
+                      C.) Bachelor of Science in International Hospitality
+                      Management (BSIHM)
+                    </li>
+                    <!-- <li class="mb-2">A.) Bachelor of Science in Business Administration (BSBA)</li>
                     <li class="mb-2">B.) Bachelor of Arts in Political Science (BAPolSci)</li>
                     <li class="mb-2">C.) Bachelor of Science in Office Administration (BSOA)</li>
                     <li>
                       D.) Bachelor of Science in International Hospitality Management (BSIHM)
-                    </li>
+                    </li> -->
                     <!-- <li class="mb-2">A.) Bachelor Of Arts in Political Science</li>
                     <li class="mb-2">B.) Bachelor Of Science in Office Administration</li>
                     <li class="mb-2">
@@ -172,12 +356,40 @@
         <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
           <div class="w-full h-full px-4 mr-auto ml-auto">
             <div
-              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg masters cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              class="
+                relative
+                h-full
+                flex flex-col
+                min-w-0
+                break-words
+                bg-white
+                w-full
+                mb-6
+                shadow-lg
+                rounded-lg
+                masters
+                cursor-pointer
+                rounded
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            >
               <blockquote class="relative p-8 mb-4">
                 <h4 class="header text-center text-3xl font-bold text-white">
                   Masters
                 </h4>
-                <div class="p-4 bacc-courses text-white sub-header text-md font-light">
+                <div
+                  class="
+                    p-4
+                    bacc-courses
+                    text-white
+                    sub-header
+                    text-md
+                    font-light
+                  "
+                >
                   <ol>
                     <!-- <li class="mb-2">A.) Master in Development Management and Governance</li>
                     <li class="mb-2">B.) Master in Management - Public Administration</li>
@@ -189,15 +401,27 @@
                     <li class="mb-2">H.) Master in Public Administration</li>
                     <li class="mb-2">I.) Master in Business Administration</li>
                     <li class="mb-2">J.) Master of Science in Social Work</li> -->
-                    <li class="mb-2">A.) Master in Business Administration</li>
-                    <li class="mb-2">B.) Master of Arts in Education</li>
-                    <li class="mb-2">C.) Master in Development Management and Governance</li>
-                    <li class="mb-2">D.) Master in Management - Public Administration</li>
-                    <li class="mb-2">E.) Master in Management - Educational Management</li>
-                    <li class="mb-2">F.) Master in Management - Information Technology</li>
-                    <li class="mb-2">G.) Master in Management - Police Administration</li>
-                    <li class="mb-2">H.) Master in Management - Health and Hospital Administration</li>
-                    <li>I.) Master of Science in Social Work</li>
+                    <!-- <li class="mb-2">A.) Master in Business Administration</li>
+                    <li class="mb-2">B.) Master of Arts in Education</li> -->
+                    <!-- <li class="mb-2">
+                      C.) Master in Development Management and Governance
+                    </li> -->
+                    <li class="mb-2">
+                      A.) Master in Management Major in Public Administration (MMPA)
+                    </li>
+                    <li class="mb-2">
+                      B.) Master in Business Administration (MBA)
+                    </li>
+                    <li class="mb-2">
+                      C.) Master in Management Major in Educational Management (MMEM)
+                    </li>
+                    <li class="mb-2">
+                      D.) Master in Management Major in Health Administration (MMHA)
+                    </li>
+                    <li class="mb-2">
+                      E.) Master in Development Management and Governance (MDMG)
+                    </li>
+                    <!-- <li>F.) Master of Science in Social Work</li> -->
                     <!-- <li>K.) Master of Arts in Education</li> -->
                   </ol>
                 </div>
@@ -209,20 +433,54 @@
         <div class="my-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-2 lg:w-1/3">
           <div class="w-full h-full px-4 mr-auto ml-auto">
             <div
-              class="relative h-full flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg doctorate cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out">
+              class="
+                relative
+                h-full
+                flex flex-col
+                min-w-0
+                break-words
+                bg-white
+                w-full
+                mb-6
+                shadow-lg
+                rounded-lg
+                doctorate
+                cursor-pointer
+                rounded
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            >
               <blockquote class="relative p-8 mb-4">
                 <h4 class="header text-center text-3xl font-bold text-white">
                   Doctorate
                 </h4>
-                <div class="p-4 bacc-courses text-white sub-header text-md font-light">
+                <div
+                  class="
+                    p-4
+                    bacc-courses
+                    text-white
+                    sub-header
+                    text-md
+                    font-light
+                  "
+                >
                   <ol>
                     <!-- <li class="mb-2">A.) Doctor of Public Administration</li>
                     <li class="mb-2">B.) Doctor of Business Administration</li>
                     <li class="mb-2">C.) PhD in Development Administration</li> -->
-                    <li class="mb-2">A.) Executive Doctorate in Leadership Major in Public Management</li>
+                    <!-- <li class="mb-2">
+                      A.) Executive Doctorate in Leadership Major in Public
+                      Management
+                    </li>
                     <li class="mb-2">B.) Doctor of Public Administration</li>
-                    <li class="mb-2">C.) Doctor of Philosopy in Development Administration</li>
-                    <li class="mb-2">D.) Doctor of Education</li>
+                    <li class="mb-2">
+                      C.) Doctor of Philosopy in Development Administration
+                    </li> -->
+                    <li class="mb-2">A.) Doctor of Education</li>
+                    <li class="mb-2">B.) Doctor of Philosophy in Development Administration Major in Public Governance</li>
                     <!-- <li class="mb-2">
                       D.) Executive Doctorate in Leadership
                       <dl>
@@ -236,12 +494,21 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
   <section id="schoolheader" class="jumbotron-schools">
-    <div class="flex flex-col justify-center h-40 gradient-bg-headers py-4 px-4 text-center">
+    <div
+      class="
+        flex flex-col
+        justify-center
+        h-40
+        gradient-bg-headers
+        py-4
+        px-4
+        text-center
+      "
+    >
       <p class="header font-extrabold text-5xl lg:text-7xl text-white">
         Earn your degree through our Partner Universities
       </p>
@@ -252,10 +519,28 @@
       <div class="flex flex-wrap justify-center my-8">
         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
           <div class="px-6">
-            <img alt="..." src="../../../assets/icons/PCU.png"
-              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <img
+              alt="..."
+              src="../../../assets/icons/PCU.png"
+              class="
+                fixed-h-w
+                mx-auto
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            />
             <div class="pt-6 text-center">
-              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+              <p
+                class="
+                  mt-1
+                  sub-header
+                  text-sm text-gray-500
+                  uppercase
+                  font-semibold
+                "
+              >
                 Philippine Christian University
               </p>
             </div>
@@ -263,10 +548,28 @@
         </div>
         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
           <div class="px-6">
-            <img alt="..." src="../../../assets/icons/UMAK.png"
-              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <img
+              alt="..."
+              src="../../../assets/icons/UMAK.png"
+              class="
+                fixed-h-w
+                mx-auto
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            />
             <div class="pt-6 text-center">
-              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+              <p
+                class="
+                  mt-1
+                  sub-header
+                  text-sm text-gray-500
+                  uppercase
+                  font-semibold
+                "
+              >
                 University of Makati
               </p>
             </div>
@@ -274,10 +577,28 @@
         </div>
         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
           <div class="px-6">
-            <img alt="..." src="../../../assets/icons/LPU.png"
-              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <img
+              alt="..."
+              src="../../../assets/icons/LPU.png"
+              class="
+                fixed-h-w
+                mx-auto
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            />
             <div class="pt-6 text-center">
-              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+              <p
+                class="
+                  mt-1
+                  sub-header
+                  text-sm text-gray-500
+                  uppercase
+                  font-semibold
+                "
+              >
                 Lyceum of the Philippines University
               </p>
             </div>
@@ -285,10 +606,28 @@
         </div>
         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12">
           <div class="px-6">
-            <img alt="..." src="../../../assets/icons/ISU.png"
-              class="fixed-h-w mx-auto transform hover:scale-105 duration-300 ease-in-out" />
+            <img
+              alt="..."
+              src="../../../assets/icons/ISU.png"
+              class="
+                fixed-h-w
+                mx-auto
+                transform
+                hover:scale-105
+                duration-300
+                ease-in-out
+              "
+            />
             <div class="pt-6 text-center">
-              <p class="mt-1 sub-header text-sm text-gray-500 uppercase font-semibold">
+              <p
+                class="
+                  mt-1
+                  sub-header
+                  text-sm text-gray-500
+                  uppercase
+                  font-semibold
+                "
+              >
                 Isabela State University
               </p>
             </div>
@@ -431,30 +770,33 @@
 
       <div class="text-center about-us-body px-20 pb-20">
         <p class="italic sub-header text-gray-900 text-3xl mb-4">
-          <span class="font-extrabold">U-ED</span> is a portal that connects public and private
-          practitioners to a wide array of courses being offered by our <span class="font-extrabold">Partner
-            Universities</span>.
+          <span class="font-extrabold">U-ED</span> is a portal that connects
+          public and private practitioners to a wide array of courses being
+          offered by our
+          <span class="font-extrabold">Partner Universities</span>.
         </p>
         <p class="italic sub-header text-gray-900 text-3xl mb-4">
-          <span class="font-extrabold">U-ED</span> does not
-          administer academic programs nor
-          confer degrees – these are carried out
-          by its partner universities including the <span class="font-extrabold">University of Makati (UMak), Philippine
-            Christian University (PCU),
-            and Isabela State University (ISU),</span> among
-          others.
+          <span class="font-extrabold">U-ED</span> does not administer academic
+          programs nor confer degrees – these are carried out by its partner
+          universities including the
+          <span class="font-extrabold"
+            >University of Makati (UMak), Philippine Christian University (PCU),
+            and Isabela State University (ISU),</span
+          >
+          among others.
         </p>
         <!-- Lyceum of the Philippines University (LPU) – Batangas -->
         <p class="italic sub-header text-gray-900 text-3xl">
-          The <span class="font-extrabold">CLCGI</span> is a service organization
-          that
-          provides continuing learning
-          through capacity-enhancement programs in the areas of leadership communication in relation to
-          governance. <span class="font-extrabold">CLCGI</span> also goes into consulting services in <span
-            class="font-extrabold">Leadership</span>,
-          <span class="font-extrabold">Communication</span> and <span class="font-extrabold">Governance
-            Research and
-            Publications.</span>
+          The <span class="font-extrabold">CLCGI</span> is a service
+          organization that provides continuing learning through
+          capacity-enhancement programs in the areas of leadership communication
+          in relation to governance.
+          <span class="font-extrabold">CLCGI</span> also goes into consulting
+          services in <span class="font-extrabold">Leadership</span>,
+          <span class="font-extrabold">Communication</span> and
+          <span class="font-extrabold"
+            >Governance Research and Publications.</span
+          >
         </p>
       </div>
 
@@ -463,7 +805,11 @@
           <p class="sub-header text-gray-900 font-extrabold mb-2">
             Powered by:
           </p>
-          <img class="h-40 w-20" src="../../../assets/icons/CLCGI.jpg" alt="Workflow" />
+          <img
+            class="h-40 w-20"
+            src="../../../assets/icons/CLCGI.jpg"
+            alt="Workflow"
+          />
         </div>
       </div>
     </div>
@@ -476,13 +822,20 @@
   <section id="contactus" class="jumbotron-speakers">
     <div #contactus class="h-100">
       <div class="text-center h-30 pb-4 px-4">
-        <p class="header text-5xl lg:text-6xl text-gray-900 mb-4">
-          Contact Us
-        </p>
+        <p class="header text-5xl lg:text-6xl text-gray-900 mb-4">Contact Us</p>
       </div>
 
       <div class="flex flex-wrap justify-center pb-10 mx-20">
-        <div class="hu-section mb-4 text-center flex flex-wrap justify-center w-full">
+        <div
+          class="
+            hu-section
+            mb-4
+            text-center
+            flex flex-wrap
+            justify-center
+            w-full
+          "
+        >
           <!-- <p class="header text-2xl">
             Local: <span class="font-bold">02-121212121</span>
           </p>
@@ -490,14 +843,12 @@
             International: <span class="font-bold">02-121212121</span>
           </p> -->
           <div class="mr-2">
-            <p class="sub-header text-2xl">
-              Email:
-            </p>
+            <p class="sub-header text-2xl">Email:</p>
           </div>
           <div>
             <p class="sub-header text-2xl text-left">
               <span class="font-bold">u.ed.portal@gmail.com</span>
-              <br>
+              <br />
               <span class="font-bold">u.edportal@yahoo.com</span>
             </p>
           </div>
