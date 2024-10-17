@@ -47,7 +47,7 @@ export class LandingService {
    * @memberof LandingService
    */
   getPrograms(): Observable<any> {
-    return this.http.get(`${environment.huApiUrl}/api/public/programs`);
+    return this.http.get(`${environment.huApiUrl}/api/v1/program`);
   }
 
   /**
