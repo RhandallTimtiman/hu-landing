@@ -293,42 +293,64 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   submit() {
-    // this.spinner.show();
+    this.spinner.show();
+    const enrolleeDetails = this.studentEnrollmentForm.getRawValue();
+    const enrolleeSchools = [
+      {
+        name: enrolleeDetails.hsName,
+        yearGraduated: enrolleeDetails.hsYearGraduated,
+        address: enrolleeDetails.hsAddress,
+        type: 'HS',
+      },
+      {
+        name: enrolleeDetails.collegeName,
+        yearGraduated: enrolleeDetails.collegeYearGraduated,
+        address: enrolleeDetails.collegeAddress,
+        type: 'CL',
+      },
+      {
+        name: enrolleeDetails.mastersName,
+        yearGraduated: enrolleeDetails.mastersYearGraduated,
+        address: enrolleeDetails.mastersAddress,
+        type: 'MS',
+      },
+    ];
     let payload = {
-      profilePicture: this.profile_picture_final,
       attachments: this.attachments_final,
-      ...this.studentEnrollmentForm.getRawValue(),
+      enrolleeSchools,
+      ...enrolleeDetails,
+      profilePicture: this.profile_picture_final[0],
     };
     console.log(payload);
 
-    // this.landingService.submitStudentInformation(formData).subscribe(
-    //   (result) => {
-    //     this.spinner.hide();
-    //     this.studentEnrollmentForm.reset();
-    //     this.attachments = [];
-    //     this.attachments_final = [];
-    //     this.attachments_holder = [];
-    //     this.profilePicture = [];
-    //     this.profile_picture_final = [];
-    //     this.attachments_holder = [];
-    //     this.toastr.success(
-    //       'You have successfully submitted your application to U-ED Portal.<br> We will process your application and we will get back to you once we completed the validation',
-    //       'Success!',
-    //       {
-    //         enableHtml: true,
-    //       }
-    //     );
-    //   },
-    //   (error) => {
-    //     this.spinner.hide();
+    this.landingService.submitStudentInformation(payload).subscribe(
+      (result) => {
+        this.spinner.hide();
+        this.studentEnrollmentForm.reset();
+        this.attachments = [];
+        this.attachments_final = [];
+        this.attachments_holder = [];
+        this.profilePicture = [];
+        this.profile_picture_final = [];
+        this.attachments_holder = [];
+        this.toastr.success(
+          'You have successfully submitted your application to U-ED Portal.<br> We will process your application and we will get back to you once we completed the validation',
+          'Success!',
+          {
+            enableHtml: true,
+          }
+        );
+      },
+      (error) => {
+        this.spinner.hide();
 
-    //     let message = this.utilities.parseError(error.errors);
+        let message = this.utilities.parseError(error.errors);
 
-    //     this.toastr.error(message, 'Please fill up the missing fields!', {
-    //       enableHtml: true,
-    //     });
-    //   }
-    // );
+        this.toastr.error(message, 'Please fill up the missing fields!', {
+          enableHtml: true,
+        });
+      }
+    );
   }
 
   /**

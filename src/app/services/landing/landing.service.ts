@@ -58,10 +58,7 @@ export class LandingService {
    * @memberof LandingService
    */
   submitStudentInformation(payload: any): Observable<any> {
-    return this.http.post(
-      `${environment.huApiUrl}/api/public/enrollee`,
-      payload
-    );
+    return this.http.post(`${environment.huApiUrl}/api/v1/enrollee`, payload);
   }
 
   uploadFile(payload: any): Observable<any> {
