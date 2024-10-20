@@ -27,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 export class FormComponent implements OnInit {
   @ViewChild('mainform', { static: true }) mainform: ElementRef<HTMLDivElement>;
   attachments: File[] = [];
-  profile_picture: File[] = [];
+  profilePicture: File[] = [];
 
   attachments_holder = [];
   profile_picture_holder = [];
@@ -66,37 +66,36 @@ export class FormComponent implements OnInit {
     this.initialAnimations();
 
     this.studentEnrollmentForm = this._formBuilder.group({
-      first_name: ['', Validators.required],
-      middle_name: [''],
-      last_name: ['', Validators.required],
-      birth_date: ['', Validators.required],
-      age: ['', Validators.required],
-      primary_email: ['', [Validators.required, Validators.email]],
-      current_employment: ['', Validators.required],
+      firstName: ['', Validators.required],
+      middleName: [''],
+      lastName: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      primaryEmail: ['', [Validators.required, Validators.email]],
+      currentEmployment: ['', Validators.required],
       position: ['', Validators.required],
       department: ['', Validators.required],
-      years_in_government: ['', Validators.required],
-      contact_number: ['', Validators.required],
+      yearsInGovernment: ['', Validators.required],
+      contactNumber: ['', Validators.required],
       address: ['', Validators.required],
-      registration_code: ['', Validators.required],
+      registrationCode: ['', Validators.required],
       regCode: ['', Validators.required],
       provCode: ['', Validators.required],
       psgcCode: ['', Validators.required],
       zip: ['', Validators.required],
-      profile_picture: ['', Validators.required],
-      program_id: ['', Validators.required],
-      course_id: ['', Validators.required],
-      professional_license: [''],
-      secondary_email: [''],
-      hs_name: ['', Validators.required],
-      hs_year_graduated: ['', Validators.required],
-      hs_address: ['', Validators.required],
-      college_name: [''],
-      college_year_graduated: [''],
-      college_address: [''],
-      masters_name: [''],
-      masters_year_graduated: [''],
-      masters_address: [''],
+      profilePicture: ['', Validators.required],
+      programId: ['', Validators.required],
+      courseId: ['', Validators.required],
+      professionalLicense: [''],
+      secondaryEmail: [''],
+      hsName: ['', Validators.required],
+      hsYearGraduated: ['', Validators.required],
+      hsAddress: ['', Validators.required],
+      collegeName: [''],
+      collegeYearGraduated: [''],
+      collegeAddress: [''],
+      mastersName: [''],
+      mastersYearGraduated: [''],
+      mastersAddress: [''],
       attachments: ['', Validators.required],
     });
 
@@ -131,31 +130,43 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   onSelect(event) {
-    this.profile_picture = [...event.addedFiles];
+    // Ensure there are files added
+    if (event.addedFiles.length > 0) {
+      this.profilePicture = [...event.addedFiles];
 
-    this.profile_picture_holder = this.profile_picture.map((prof) => {
-      return prof && prof.name;
-    });
-
-    this.studentEnrollmentForm
-      .get('profile_picture')
-      .setValue(this.profile_picture_holder);
-
-    this.readFile(this.profile_picture[0]).then((fileContents) => {
-      // Put this string in a request body to upload it to an API.
-      let payload = {
-        fileContents: fileContents,
-      };
-
-      this.landingService.uploadFile(payload).subscribe(
-        (result) => {
-          this.profile_picture_final.push(result?.path);
-        },
-        (error) => {
-          console.log(error);
-        }
+      // Map to get the names of the files
+      this.profile_picture_holder = this.profilePicture.map(
+        (prof) => prof?.name
       );
-    });
+
+      // Read the first file (if exists)
+      this.readFile(this.profilePicture[0])
+        .then((fileContents) => {
+          // Create payload for upload
+          const payload = { fileContents };
+
+          // Upload file using the service
+          this.landingService.uploadFile(payload).subscribe(
+            (result) => {
+              // Push the uploaded file path to the final array
+              this.profile_picture_final.push(result?.path);
+
+              // Set the value in the form after successful upload
+              this.studentEnrollmentForm
+                .get('profilePicture')
+                .setValue(this.profile_picture_final);
+            },
+            (error) => {
+              console.error('Upload error:', error);
+            }
+          );
+        })
+        .catch((error) => {
+          console.error('File read error:', error);
+        });
+    } else {
+      console.warn('No files were selected.');
+    }
   }
 
   /**
@@ -166,11 +177,11 @@ export class FormComponent implements OnInit {
    */
   onRemove(event) {
     console.log(event);
-    this.profile_picture.splice(this.profile_picture.indexOf(event), 1);
-    this.profile_picture_holder.splice(this.profile_picture.indexOf(event), 1);
-    this.profile_picture_final.splice(this.profile_picture.indexOf(event), 1);
+    this.profilePicture.splice(this.profilePicture.indexOf(event), 1);
+    this.profile_picture_holder.splice(this.profilePicture.indexOf(event), 1);
+    this.profile_picture_final.splice(this.profilePicture.indexOf(event), 1);
     this.studentEnrollmentForm
-      .get('profile_picture')
+      .get('profilePicture')
       .setValue(this.profile_picture_holder);
   }
 
@@ -204,7 +215,7 @@ export class FormComponent implements OnInit {
     });
     this.studentEnrollmentForm
       .get('attachments')
-      .setValue(this.attachments_holder);
+      .setValue(this.attachments_final);
   }
 
   /**
@@ -282,64 +293,42 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   submit() {
-    this.spinner.show();
-    // console.log(this.studentEnrollmentForm.getRawValue())
-    // this.toastr.success('Hello world!', 'Toastr fun!');
-    const formData = new FormData();
+    // this.spinner.show();
+    let payload = {
+      profilePicture: this.profile_picture_final,
+      attachments: this.attachments_final,
+      ...this.studentEnrollmentForm.getRawValue(),
+    };
+    console.log(payload);
 
-    const studentInfo = this.studentEnrollmentForm.getRawValue();
+    // this.landingService.submitStudentInformation(formData).subscribe(
+    //   (result) => {
+    //     this.spinner.hide();
+    //     this.studentEnrollmentForm.reset();
+    //     this.attachments = [];
+    //     this.attachments_final = [];
+    //     this.attachments_holder = [];
+    //     this.profilePicture = [];
+    //     this.profile_picture_final = [];
+    //     this.attachments_holder = [];
+    //     this.toastr.success(
+    //       'You have successfully submitted your application to U-ED Portal.<br> We will process your application and we will get back to you once we completed the validation',
+    //       'Success!',
+    //       {
+    //         enableHtml: true,
+    //       }
+    //     );
+    //   },
+    //   (error) => {
+    //     this.spinner.hide();
 
-    // studentInfo['profile_picture'] = this.profile_picture_final[0]
-    // studentInfo['attachments'] = this.attachments_final
-    delete studentInfo['profile_picture'];
-    delete studentInfo['attachments'];
-    delete studentInfo['secondary_email'];
+    //     let message = this.utilities.parseError(error.errors);
 
-    Object.keys(studentInfo).forEach((key) =>
-      formData.append(key, studentInfo[key])
-    );
-
-    formData.append(
-      'profile_picture',
-      this.profile_picture[0] ? this.profile_picture[0] : ''
-    );
-
-    if (this.attachments.length !== 0) {
-      for (var i = 0; i < this.attachments.length; i++) {
-        formData.append('attachments[]', this.attachments[i]);
-      }
-    } else {
-      formData.append('attachments', '');
-    }
-
-    this.landingService.submitStudentInformation(formData).subscribe(
-      (result) => {
-        this.spinner.hide();
-        this.studentEnrollmentForm.reset();
-        this.attachments = [];
-        this.attachments_final = [];
-        this.attachments_holder = [];
-        this.profile_picture = [];
-        this.profile_picture_final = [];
-        this.attachments_holder = [];
-        this.toastr.success(
-          'You have successfully submitted your application to U-ED Portal.<br> We will process your application and we will get back to you once we completed the validation',
-          'Success!',
-          {
-            enableHtml: true,
-          }
-        );
-      },
-      (error) => {
-        this.spinner.hide();
-
-        let message = this.utilities.parseError(error.errors);
-
-        this.toastr.error(message, 'Please fill up the missing fields!', {
-          enableHtml: true,
-        });
-      }
-    );
+    //     this.toastr.error(message, 'Please fill up the missing fields!', {
+    //       enableHtml: true,
+    //     });
+    //   }
+    // );
   }
 
   /**
