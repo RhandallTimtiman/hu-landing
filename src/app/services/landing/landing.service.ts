@@ -63,4 +63,14 @@ export class LandingService {
       payload
     );
   }
+
+  uploadFile(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.post(`${environment.huApiUrl}/api/v1/file`, payload, {
+      headers,
+    });
+  }
 }

@@ -131,7 +131,6 @@ export class FormComponent implements OnInit {
    * @memberof FormComponent
    */
   onSelect(event) {
-    console.log(event);
     this.profile_picture = [...event.addedFiles];
 
     this.profile_picture_holder = this.profile_picture.map((prof) => {
@@ -144,7 +143,18 @@ export class FormComponent implements OnInit {
 
     this.readFile(this.profile_picture[0]).then((fileContents) => {
       // Put this string in a request body to upload it to an API.
-      this.profile_picture_final.push(fileContents);
+      let payload = {
+        fileContents: fileContents,
+      };
+
+      this.landingService.uploadFile(payload).subscribe(
+        (result) => {
+          this.profile_picture_final.push(result?.path);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     });
   }
 
@@ -178,7 +188,18 @@ export class FormComponent implements OnInit {
     event.addedFiles.forEach((file) => {
       this.readFile(file).then((fileContents) => {
         // Put this string in a request body to upload it to an API.
-        this.attachments_final.push(fileContents);
+        let payload = {
+          fileContents: fileContents,
+        };
+
+        this.landingService.uploadFile(payload).subscribe(
+          (result) => {
+            this.attachments_final.push(result?.path);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
       });
     });
     this.studentEnrollmentForm

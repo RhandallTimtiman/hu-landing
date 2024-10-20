@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "hu-landing"
+  "defaultProject": "hu-landing",
+  "cli": {
+    "analytics": false
+  }
 }
